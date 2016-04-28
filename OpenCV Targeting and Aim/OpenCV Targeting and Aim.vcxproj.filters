@@ -13,22 +13,16 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\OpenCV">
-      <UniqueIdentifier>{32faffc1-c64e-4a80-8a35-d4d9a3134f74}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\ArduinoComm">
-      <UniqueIdentifier>{61f841ba-7d28-44c6-9ee6-d388ca26fb00}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="OpenCV_Target.cpp">
-      <Filter>Source Files\OpenCV</Filter>
-    </ClCompile>
     <ClCompile Include="ArduinoComm.cpp">
-      <Filter>Source Files\ArduinoComm</Filter>
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenCV_Target.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
