@@ -28,10 +28,17 @@ OpenCV_Target::~OpenCV_Target()
 {
 } 
 
-bool OpenCV_Target::detectTargetOnce()
+bool OpenCV_Target::isConnected()
 {
 	if (!cap.isOpened())
 		return false;
+	else
+		return true;
+}
+
+void OpenCV_Target::detectTarget()
+{
+	
 	cap >> img;
 
 	Mat greyImage;
@@ -46,11 +53,16 @@ bool OpenCV_Target::detectTargetOnce()
 		for (int i = 0; i <= found.size() - 1; i++)
 			rectangle(img, found[i].br(), found[i].tl(), Scalar(0, 0, 0), 2, 8, 0);
 	}
+
+	TL = found[1].tl();
+	BR = found[1].br();
+	CENTER[1] = (TL[1] + BR[1]) / 2;
+	CENTER[2] = (TL[2] + BR[2]) / 2;
+
 	imshow(windowName, img);
-	return true;
 }
 
-void OpenCV_Target::detectTarget()//beta don't use
+void OpenCV_Target::detectTargetThread()//beta don't use
 {
 	std::thread(threadableTargetDetection);
 }
@@ -73,6 +85,10 @@ void OpenCV_Target::threadableTargetDetection()//beta don't use
 			for (int i = 0; i <= found.size() - 1; i++)
 				rectangle(img, found[i].br(), found[i].tl(), Scalar(0, 0, 0), 2, 8, 0);
 		}
+		TL = found[1].tl();
+		BR = found[1].br();
+		CENTER[1] = (TL[1] + BR[1]) / 2;
+		CENTER[2] = (TL[2] + BR[2]) / 2;
 		imshow(windowName, img);
 	}
 }

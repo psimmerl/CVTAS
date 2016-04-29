@@ -5,8 +5,8 @@ public:
 	OpenCV_Target(std::string, char, char, char, char, char, char);
 	~OpenCV_Target();
 	std::string windowName;
-	bool detectTargetOnce();
 	void detectTarget();
+	void detectTargetThread();
 	char port = 0;
 	const std::string imageType[2] = { "haarcascade_frontalface_alt.xml", "test" };
 	Mat img;
@@ -22,6 +22,12 @@ public:
 	Size *maxObjectSize;
 	char xyTargetCenter[2];
 	char xyCamCenter[2];
+	bool isConnected();
+
+	//points
+	Point2f TL;
+	Point2f BR;
+	Point2f CENTER;
 	/*TODO
 	centers
 	diff images

@@ -148,13 +148,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ArduinoComm.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="OpenCV_Target.cpp" />
     <ClCompile Include="Serial.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ArduinoComm.h" />
     <ClInclude Include="OpenCV_Target.h" />
     <ClInclude Include="Serial.h" />
   </ItemGroup>
