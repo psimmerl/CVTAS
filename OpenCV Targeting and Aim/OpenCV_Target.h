@@ -25,9 +25,9 @@ public:
 	bool isConnected();
 
 	//points
-	Point2f TL;
-	Point2f BR;
-	Point2f CENTER;
+	Point TL;
+	Point BR;
+	Point CENTER;
 	/*TODO
 	centers
 	diff images

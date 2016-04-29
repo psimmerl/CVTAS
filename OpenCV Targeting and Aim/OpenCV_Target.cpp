@@ -54,10 +54,13 @@ void OpenCV_Target::detectTarget()
 			rectangle(img, found[i].br(), found[i].tl(), Scalar(0, 0, 0), 2, 8, 0);
 	}
 
+
+
 	TL = found[1].tl();
 	BR = found[1].br();
-	CENTER[1] = (TL[1] + BR[1]) / 2;
-	CENTER[2] = (TL[2] + BR[2]) / 2;
+
+	CENTER.x = (TL.x + BR.x) / 2;
+	CENTER.y = (TL.y + BR.y) / 2;
 
 	imshow(windowName, img);
 }
