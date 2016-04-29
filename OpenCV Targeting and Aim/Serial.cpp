@@ -36,7 +36,7 @@ Serial::Serial(WCHAR *PORT)
 			dcbSParam.fDtrControl = DTR_CONTROL_ENABLE;
 
 			if (!SetCommState(serialHandler, &dcbSParam))
-				printf("can't set ser param");
+				printf("can't set ser param"); 
 			else
 			{
 				this->isConnected = true;

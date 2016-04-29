@@ -26,7 +26,7 @@ OpenCV_Target::OpenCV_Target(std::string windowName, char port, char imtyp = 0, 
 
 OpenCV_Target::~OpenCV_Target()
 {
-}
+} 
 
 bool OpenCV_Target::detectTargetOnce()
 {

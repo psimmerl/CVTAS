@@ -12,7 +12,7 @@ public:
 	Mat img;
 	CascadeClassifier detector;
 	VideoCapture cap;
-	//std::vector<Rect> found;
+	//std::vector<Rect> found; 
 	std::string cascadeName;
 	bool loaded;
 	int groundTheshold;
