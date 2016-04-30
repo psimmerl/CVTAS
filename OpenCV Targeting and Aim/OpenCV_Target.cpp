@@ -9,7 +9,7 @@
 
 using namespace cv;
 
-OpenCV_Target::OpenCV_Target(std::string windowName, char port, char imtyp = 0, char minimumWidth = 80, char minimumHeight = 80, char maximumWidth = 200, char maximumHeight = 200)
+OpenCV_Target::OpenCV_Target(std::string windowName, unsigned char port, unsigned char imtyp = 0, unsigned char minimumWidth = 80, unsigned char minimumHeight = 80, unsigned char maximumWidth = 200, unsigned char maximumHeight = 200)
 {
 	VideoCapture cap(port);
 	cap.open(port);
@@ -90,8 +90,9 @@ void OpenCV_Target::threadableTargetDetection()//beta don't use
 		}
 		TL = found[1].tl();
 		BR = found[1].br();
-		CENTER[1] = (TL[1] + BR[1]) / 2;
-		CENTER[2] = (TL[2] + BR[2]) / 2;
+
+		CENTER.x = (TL.x + BR.x) / 2;
+		CENTER.y = (TL.y + BR.y) / 2;
 		imshow(windowName, img);
 	}
 }

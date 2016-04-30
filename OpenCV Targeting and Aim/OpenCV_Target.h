@@ -2,7 +2,7 @@
 class OpenCV_Target
 {
 public:
-	OpenCV_Target(std::string, char, char, char, char, char, char);
+	OpenCV_Target(std::string, unsigned char, unsigned char = 0, unsigned char = 80, unsigned char = 80, unsigned char = 200, unsigned char = 200);
 	~OpenCV_Target();
 	std::string windowName;
 	void detectTarget();
